@@ -1,0 +1,14 @@
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+
+    movieAPI: new MovieAPI()
+  }),
+  context: {
+    hello: `world`
+  }
+});
+
+server
+  .listen({ port: 4000 })
+  .then(({ url }) => console.log(`app running at ${url}`));
